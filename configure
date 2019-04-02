@@ -6,11 +6,14 @@ ${R_HOME}/bin/Rscript -e "git2r::clone(\"${git_url}\", local_path='luna-base')"
 # mkdir include/
 export LUNA_ARCH=`${R_HOME}/bin/Rscript -e 'cat(ifelse(Sys.info()["sysname"] == "Darwin", "MAC", "LINUX"))'`
 cd luna-base
+rm -rf .git
 echo "${LUNA_ARCH}"
 echo "${FFTW}"
 $(MAKE) ARCH=${LUNA_ARCH} FFTW=${FFTW}
-cp luna.h ../ 
-cp eval.o globals.o ../ 
-cp lib*.a ../
-cd ../
+# mv * ../include
+mv *.a *.o ../include
+mv eval.h luna.h ../include
+cd ../ 
+${R_HOME}/bin/Rscript copier.R
+# cd ../
 rm -rf luna-base
