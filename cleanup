@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -rf ./src/luna-base
+rm -f src/*.o src/*.a

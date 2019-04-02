@@ -1,0 +1,16 @@
+#!/bin/bash
+cd ./src
+git_url=https://bitbucket.org/remnrem/luna-base
+${R_HOME}/bin/Rscript -e "git2r::clone(\"${git_url}\", local_path='luna-base')"
+
+# mkdir include/
+export LUNA_ARCH=`${R_HOME}/bin/Rscript -e 'cat(ifelse(Sys.info()["sysname"] == "Darwin", "MAC", "LINUX"))'`
+cd luna-base
+echo "${LUNA_ARCH}"
+echo "${FFTW}"
+$(MAKE) ARCH=${LUNA_ARCH} FFTW=${FFTW}
+cp luna.h ../ 
+cp eval.o globals.o ../ 
+cp lib*.a ../
+cd ../
+rm -rf luna-base
