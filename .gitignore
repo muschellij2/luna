@@ -1,1 +1,5 @@
 .Rproj.user
+src/*.a
+src/*.o
+src/luna.h
+.Rhistory

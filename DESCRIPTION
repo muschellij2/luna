@@ -14,10 +14,10 @@ Authors@R:
            comment = c(ORCID = "0000-0001-6469-1750"))
     )
 Depends: R (>= 3.0.0)
-Description: Interface for the 'luna' sleep signal library 
+Description: Interface for the 'Luna' sleep signal library 
   <http://zzz.bwh.harvard.edu/luna/>.
 License: GPL (>= 2)
 Imports: 
     git2r
-URL: https://github.com/muschellij2/luna
+URL: https://github.com/muschellij2/luna, http://zzz.bwh.harvard.edu/luna
 BugReports: https://github.com/muschellij2/luna/issues
