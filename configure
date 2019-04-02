@@ -14,7 +14,7 @@ if [[ -z "${FFTW}" ]];
   export FFTW_I_FLAGS=`pkg-config --cflags fftw3`
   export FFTW_LIB_FLAGS=`pkg-config --libs-only-L fftw3`
   export FFTW_LIB_FLAGS=`echo "${FFTW_LIB_FLAGS}" | sed  's/-L//'`
-  export FFTW=`dirname $"FFTW_LIB_FLAGS"`
+  export FFTW=`dirname "${FFTW_LIB_FLAGS}"`
 else
   export FFTW_I_FLAGS=-I${FFTW}/include
   export FFTW_LIB_FLAGS=${FFTW}/lib
