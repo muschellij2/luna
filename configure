@@ -22,7 +22,7 @@ else
 fi
 echo "${FFTW_I_FLAGS}"
 echo "${FFTW_LIB_FLAGS}"
-echo "${FFTW_FLAGS}"
+echo "${FFTW}"
 make ARCH=${LUNA_ARCH} FFTW=${FFTW} ;
 # mv * ../include
 mkdir -p ../include
