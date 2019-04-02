@@ -20,6 +20,7 @@ else
 fi
 make ARCH=${LUNA_ARCH} FFTW=${FFTW}
 # mv * ../include
+mkdir -p ../include
 mv *.a *.o ../include
 mv eval.h luna.h ../include
 cd ../
