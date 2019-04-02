@@ -9,7 +9,7 @@ cd luna-base
 rm -rf .git
 echo "${LUNA_ARCH}"
 echo "${FFTW}"
-if [[ -n "${FFTW}" ]];
+if [[ -z "${FFTW}" ]];
   then
   export FFTW_I_FLAGS=`pkg-config --cflags fftw3`
   export FFTW_LIB_FLAGS=`pkg-config --libs fftw3`
@@ -18,7 +18,14 @@ else
   export FFTW_LIB_FLAGS=${FFTW}/lib/libfftw3.a
 
 fi
-make ARCH=${LUNA_ARCH} FFTW=${FFTW}
+echo "${FFTW_I_FLAGS}"
+echo "${FFTW_LIB_FLAGS}"
+if [[ -z "${FFTW}" ]];
+then 
+	make ARCH=${LUNA_ARCH} FFTW=${FFTW} ;
+else 
+	make ARCH=${LUNA_ARCH} ;
+fi
 # mv * ../include
 mkdir -p ../include
 mv *.a *.o ../include
