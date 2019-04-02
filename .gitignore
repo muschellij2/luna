@@ -4,3 +4,4 @@ src/*.o
 src/luna.h
 .Rhistory
 src/luna-base/
+src/include/*

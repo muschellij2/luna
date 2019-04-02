@@ -9,11 +9,20 @@ cd luna-base
 rm -rf .git
 echo "${LUNA_ARCH}"
 echo "${FFTW}"
+if [[ -n "${FFTW}" ]];
+  then
+  FFTW_I_FLAGS=`pkg-config --cflags fftw3`
+  FFTW_LIB_FLAGS=`pkg-config --libs fftw3`
+else
+  FFTW_I_FLAGS=-I${FFTW}/include
+  FFTW_LIB_FLAGS=${FFTW}/lib/libfftw3.a
+
+fi
 $(MAKE) ARCH=${LUNA_ARCH} FFTW=${FFTW}
 # mv * ../include
 mv *.a *.o ../include
 mv eval.h luna.h ../include
-cd ../ 
+cd ../
 ${R_HOME}/bin/Rscript copier.R
 # cd ../
 rm -rf luna-base
