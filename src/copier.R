@@ -1,4 +1,4 @@
-x = readLines("headers.txt"); 
+x = list.files(pattern = ".h", path = "luna-base", recursive = TRUE)
 xx = file.path("include", x)
 x = file.path("luna-base", x)
 dirs = dirname(xx)
