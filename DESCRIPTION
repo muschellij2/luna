@@ -19,4 +19,5 @@ Description: Interface for the 'luna' sleep signal library
 License: GPL (>= 2)
 Imports: 
     git2r
-
+URL: https://github.com/muschellij2/luna
+BugReports: https://github.com/muschellij2/luna/issues
