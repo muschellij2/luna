@@ -11,14 +11,14 @@ echo "${LUNA_ARCH}"
 echo "${FFTW}"
 if [[ -n "${FFTW}" ]];
   then
-  FFTW_I_FLAGS=`pkg-config --cflags fftw3`
-  FFTW_LIB_FLAGS=`pkg-config --libs fftw3`
+  export FFTW_I_FLAGS=`pkg-config --cflags fftw3`
+  export FFTW_LIB_FLAGS=`pkg-config --libs fftw3`
 else
-  FFTW_I_FLAGS=-I${FFTW}/include
-  FFTW_LIB_FLAGS=${FFTW}/lib/libfftw3.a
+  export FFTW_I_FLAGS=-I${FFTW}/include
+  export FFTW_LIB_FLAGS=${FFTW}/lib/libfftw3.a
 
 fi
-$(MAKE) ARCH=${LUNA_ARCH} FFTW=${FFTW}
+make ARCH=${LUNA_ARCH} FFTW=${FFTW}
 # mv * ../include
 mv *.a *.o ../include
 mv eval.h luna.h ../include
