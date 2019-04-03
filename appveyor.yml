@@ -29,6 +29,7 @@ build_script:
   - ls
   - unzip fftw.zip -d C:/fftw
   - rm fftw.zip
+  - ls C:/fftw
   - travis-tool.sh install_deps
 
 test_script:
