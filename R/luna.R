@@ -6,6 +6,7 @@
 ##                                                ##
 ####################################################
 
+
 luna.globals <- new.env()
 
 luna.globals$version  <- "v0.22"
@@ -41,7 +42,10 @@ luna.globals$logmode  <- 0
 ##                                                ##
 ####################################################
 
-
+#' @importFrom graphics image
+#' @importFrom grDevices colorRampPalette rgb
+#' @importFrom stats sd
+#' @importFrom utils capture.output read.table
 lsl <- function(file , path = "") {
   d <-
     read.table(
