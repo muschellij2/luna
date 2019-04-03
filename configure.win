@@ -1,13 +1,13 @@
 #!/bin/bash
 cd ./src
-git_url=https://bitbucket.org/remnrem/luna-base
+git_url=
 # export LUNA_ARCH=`${R_HOME}/bin/Rscript.exe -e 'cat(ifelse(.Platform$OS.type == "windows", "WINDOWS", ""))'`
 # if [[ -z "${LUNA_ARCH}" ]]; then
 #   export LUNA_ARCH=`${R_HOME}/bin/Rscript.exe -e 'cat(ifelse(Sys.info()["sysname"] == "Darwin", "MAC", "LINUX"))'` ;
 # fi
 # echo "${LUNA_ARCH}"
 export LUNA_ARCH=WINDOWS
-${R_HOME}/bin/Rscript.exe -e 'git2r::clone("${git_url}", local_path="luna-base")'
+${R_HOME}/bin/Rscript.exe -e 'git2r::clone("https://bitbucket.org/remnrem/luna-base", local_path="luna-base")'
 
 # mkdir include/
 cd luna-base
