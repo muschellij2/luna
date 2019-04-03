@@ -28,6 +28,7 @@ build_script:
   - ps: Invoke-WebRequest ftp://ftp.fftw.org/pub/fftw/fftw-3.3.5-dll64.zip -OutFile "fftw.zip"
   - ls
   - unzip fftw.zip -d C:/fftw
+  - rm fftw.zip
   - travis-tool.sh install_deps
 
 test_script:
