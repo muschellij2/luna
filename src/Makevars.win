@@ -1,4 +1,4 @@
-PKG_CPPFLAGS="${PKG_CPPFLAGS} -DNO_HPDFLIB -I./include/ -IC:/fftw/includes"
+PKG_CPPFLAGS="-DNO_HPDFLIB -I./include/ -IC:/fftw/includes"
 PKG_LIBS="${PKG_LIBS} include/eval.o"
 PKG_LIBS="${PKG_LIBS} include/globals.o"
 PKG_LIBS="${PKG_LIBS} include/libannot.a"
