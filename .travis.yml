@@ -30,13 +30,16 @@ before_install:
   - fname=travis_helpers.sh
   - wget -O ${fname} http://bit.ly/travis_helpers
   - cat ${fname}; source ${fname}; rm ${fname}  
+  - export LD_LIBRARY_PATH=/usr/local/clang/lib:${LD_LIBRARY_PATH}
+  - x=`export_clang_cxx`; eval ${x}
+  - if [ "$TRAVIS_OS_NAME" = "osx" ];
+    then
+      no_open_mp ;
+    fi
+  - clang_cxx    
   - cat DESCRIPTION
   - start_xvfb ;
   - export rver=`r_version`; echo $rver ;
-  - if [ "$TRAVIS_OS_NAME" = "osx" ];
-    then
-      no_open_mp ; 
-    fi
   - fftw_install ;
 
 after_success:
