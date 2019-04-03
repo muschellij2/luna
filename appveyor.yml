@@ -25,6 +25,8 @@ environment:
 # Adapt as necessary starting from here
 
 build_script:
+  - ps: (new-object net.webclient).DownloadFile('ftp://ftp.fftw.org/pub/fftw/fftw-3.3.5-dll64.zip', 'fftw.zip')
+  - unzip fftw.zip -d C:/fftw
   - travis-tool.sh install_deps
 
 test_script:
