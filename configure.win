@@ -7,7 +7,8 @@ git_url=
 # fi
 # echo "${LUNA_ARCH}"
 export LUNA_ARCH=WINDOWS
-res=`${R_HOME}/bin/Rscript.exe -e "git2r::clone(\"https://bitbucket.org/remnrem/luna-base\", local_path=\"luna-base\")"`
+echo "${LUNA_ARCH}"
+res=`"${R_HOME}"/bin/Rscript.exe -e "library(git2r); git2r::clone(\"https://bitbucket.org/remnrem/luna-base\", local_path=\"luna-base\")"`
 # mkdir include/
 cd luna-base
 rm -rf .git
