@@ -505,23 +505,23 @@ lcmd <- function(filename) {
 lstgcols <- function(s) {
   as.vector(sapply(s , function(x) {
     ifelse(x == "NREM1" ,
-           rgb(0, 190, 250, 255, max = 255) ,
+           rgb(0, 190, 250, 255, maxColorValue = 255) ,
            ifelse(
              x == "NREM2" ,
-             rgb(0, 80, 200, 255, max = 255) ,
+             rgb(0, 80, 200, 255, maxColorValue = 255) ,
              ifelse(
                x == "NREM3" ,
-               rgb(0, 0, 80, 255, max = 255) ,
+               rgb(0, 0, 80, 255, maxColorValue = 255) ,
                ifelse(
                  x == "NREM4" ,
-                 rgb(0, 0, 50, 255, max = 255) ,
+                 rgb(0, 0, 50, 255, maxColorValue = 255) ,
                  ifelse(
                    x == "REM"   ,
-                   rgb(250, 20, 50, 255, max = 255) ,
+                   rgb(250, 20, 50, 255, maxColorValue = 255) ,
                    ifelse(
                      x == "wake"  ,
-                     rgb(100, 100, 100, 255, max = 255) ,
-                     rgb(20, 160, 20, 100, max =
+                     rgb(100, 100, 100, 255, maxColorValue = 255) ,
+                     rgb(20, 160, 20, 100, maxColorValue =
                            255)
                    )
                  )
