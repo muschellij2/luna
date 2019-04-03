@@ -8,22 +8,11 @@ export LUNA_ARCH=`${R_HOME}/bin/Rscript -e 'cat(ifelse(Sys.info()["sysname"] == 
 cd luna-base
 rm -rf .git
 echo "${LUNA_ARCH}"
-echo "${FFTW}"
-if [[ -z "${FFTW}" ]];
-  then
-  export FFTW_I_FLAGS=`pkg-config --cflags fftw3`
-  export FFTW_LIB_FLAGS=`pkg-config --libs-only-L fftw3`
-  export FFTW_LIB_FLAGS=`echo "${FFTW_LIB_FLAGS}" | sed  's/-L//'`
-  export FFTW=`dirname "${FFTW_LIB_FLAGS}"`
-else
-  export FFTW_I_FLAGS=-I${FFTW}/include
-  export FFTW_LIB_FLAGS=${FFTW}/lib
 
-fi
-echo "${FFTW_I_FLAGS}"
-echo "${FFTW_LIB_FLAGS}"
-echo "${FFTW}"
-make ARCH=${LUNA_ARCH} FFTW=${FFTW} ;
+# echo "${FFTW_I_FLAGS}"
+# echo "${FFTW_LIB_FLAGS}"
+# echo "${FFTW}"
+make ARCH=${LUNA_ARCH} ;
 # mv * ../include
 mkdir -p ../include
 mv *.a *.o ../include
