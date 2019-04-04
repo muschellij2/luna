@@ -31,7 +31,6 @@ build_script:
   - rm fftw.zip
   - ls C:/fftw
   - set FFTW=C:/fftw
-  - ps: lib /machine:x64 /def:libfftw3f-3.def  
   - travis-tool.sh install_deps
 
 test_script:
